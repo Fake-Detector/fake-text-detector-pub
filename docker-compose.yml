@@ -1,0 +1,5 @@
+version: '3'
+services:
+  fake-text-detector:
+    build: .
+    network_mode: "host"
