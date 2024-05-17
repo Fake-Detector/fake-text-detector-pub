@@ -17,7 +17,7 @@ class FakeDetector:
         with torch.no_grad():
             outputs = self.model(input_ids=tokenized['input_ids'], attention_mask=tokenized['attention_mask'])
             probabilities = torch.softmax(outputs.logits, dim=-1)
-            predicted_prob = probabilities[:, 1].item()
+            predicted_prob = probabilities[:, 1].item() * 100
 
         return predicted_prob
 
